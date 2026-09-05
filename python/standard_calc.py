@@ -12,14 +12,14 @@ def bound_to_180(angle):
         float: The bounded angle in degrees.
     """
 
-    #380 % 180 = 20
-    #side = 2
+    # 380 % 180 = 20
+    # side = 2
 
-    #200 % 180 = 20
-    #side = 1
+    # 200 % 180 = 20
+    # side = 1
 
-    #180 % 180 = 0
-    #side = 1
+    # 180 % 180 = 0
+    # side = 1
 
     res = 0
     offset = angle % 180
@@ -50,7 +50,7 @@ def is_angle_between(first_angle, middle_angle, second_angle):
         bool: True when `middle_angle` is not in the reflex angle of `first_angle` and `second_angle`, false otherwise.
     """
 
-    #input (45, 90, 270)
+    # input (45, 90, 270)
     # -> 45, 90, -45
     middle_difference = bound_to_180(middle_angle - first_angle)
     second_difference = bound_to_180(second_angle - first_angle)
@@ -59,4 +59,3 @@ def is_angle_between(first_angle, middle_angle, second_angle):
         return 0 <= middle_difference <= second_difference
 
     return second_difference <= middle_difference <= 0
-
